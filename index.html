@@ -1,32 +1,44 @@
-<!doctype html>
+<html>
+  <head>
+		<title>My Now Amazing Webpage</title>
+		<!-- Load default skick slider stylesheets -->
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick/slick/slick.css"/>
+		<!-- Add the slick-theme.css if you want default styling -->
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick/slick/slick-theme.css"/>
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-  <link rel="stylesheet" href="stylesheet.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="jquery.touchslider.js"></script>
-	<script src="javascript.js"></script>
-</head>
+		<!-- Load custom stylesheet -->
+		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+  </head>
+  <body>
 
-<body>
-	<div class="touchslider">
-		<div class="touchslider-viewport" style="width:500px;overflow:hidden"><div>
-			<div class="touchslider-item">One</div>
-			<div class="touchslider-item">Two</div>
-			<div class="touchslider-item">Three</div>
-		</div></div>
-
-		<div>
-			<span class="touchslider-prev">Prev</span>
-<!-- 			<span class="touchslider-nav-item touchslider-nav-item-current">1</span>
-			<span class="touchslider-nav-item">2</span> -->
-			<span class="touchslider-next">Next</span>
+		<div class="main">
+			<div class="slider slider-for">
+				<div><h3>1</h3></div>
+				<div><h3>2</h3></div>
+				<div><h3>3</h3></div>
+				<div><h3>4</h3></div>
+				<div><h3>5</h3></div>
+			</div>
+			<div class="slider slider-nav">
+				<div><h3>1</h3></div>
+				<div><h3>2</h3></div>
+				<div><h3>3</h3></div>
+				<div><h3>4</h3></div>
+				<div><h3>5</h3></div>
+			</div>
+			<div class="action">
+				<a href="#" data-slide="3">go to slide 3</a>
+				<a href="#" data-slide="4">go to slide 4</a>
+				<a href="#" data-slide="5">go to slide 5</a>
+			</div>
 		</div>
-</div>
 
-</body>
+		<!-- Load default skick slider scripts -->
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick/slick/slick.min.js"></script>
+
+		<!-- Load custom script -->
+		<script src="javascript.js"></script>
+  </body>
 </html>
