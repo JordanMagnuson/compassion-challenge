@@ -9,16 +9,24 @@ $(document).ready(function(){
  });
  $('.spinner a').click(function(e) {
    e.preventDefault();
-	 var slideCount = $(".slider").slick("getSlick").slideCount;
-	 var currentSlide = $(".slider").slick("getSlick").currentSlide;
-	 var randSlide = Math.floor(Math.random() * slideCount);
-
+	 var personCount = $(".person-slider").slick("getSlick").slideCount;
+	 var currentPerson = $(".person-slider").slick("getSlick").currentSlide;
+	 var challengeCount = $(".challenge-slider").slick("getSlick").slideCount;
+	 var currentChallenge = $(".challenge-slider").slick("getSlick").currentSlide;
 		do
 		{
-			var randSlide = Math.floor(Math.random() * slideCount);
+			var randPerso = Math.floor(Math.random() * personCount);
 		}
-		while (randSlide == currentSlide);
-   $('.slider').slick('slickGoTo', randSlide);
+		while (randPerso == currentPerson);
+		do
+		{
+			var randChallenge = Math.floor(Math.random() * challengeCount);
+		}
+		while (randChallenge == currentChallenge);
+
+
+   $('.person-slider').slick('slickGoTo', randPerso);
+	 $('.challenge-slider').slick('slickGoTo', randChallenge);
  });
 
 });
