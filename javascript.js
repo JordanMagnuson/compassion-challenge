@@ -1,23 +1,24 @@
 $(document).ready(function(){
 	console.log( "ready!" );
- $('.slider-for').slick({
+ $('.slider').slick({
    slidesToShow: 1,
    slidesToScroll: 1,
-   arrows: false,
-   fade: true,
-   asNavFor: '.slider-nav'
+   arrows: true,
+		dots: true,
+   focusOnSelect: true,
  });
- $('.slider-nav').slick({
-   slidesToShow: 3,
-   slidesToScroll: 1,
-   asNavFor: '.slider-for',
-   dots: true,
-   focusOnSelect: true
+ $('.spinner a').click(function(e) {
+   e.preventDefault();
+	 var slideCount = $(".slider").slick("getSlick").slideCount;
+	 var currentSlide = $(".slider").slick("getSlick").currentSlide;
+	 var randSlide = Math.floor(Math.random() * slideCount);
+
+		do
+		{
+			var randSlide = Math.floor(Math.random() * slideCount);
+		}
+		while (randSlide == currentSlide);
+   $('.slider').slick('slickGoTo', randSlide);
  });
 
- $('a[data-slide]').click(function(e) {
-   e.preventDefault();
-   var slideno = $(this).data('slide');
-   $('.slider-nav').slick('slickGoTo', slideno - 1);
- });
 });
