@@ -4,7 +4,7 @@ $(document).ready(function(){
 	createChallengeSlider();
 
 	// Randomizer button.
-	$('#spinner a').click(function(e) {
+	$('#spinner').click(function(e) {
 		e.preventDefault();
 		randomizeSlider('#person-slider');
     randomizeSlider('#challenge-slider');
