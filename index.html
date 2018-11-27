@@ -1,9 +1,11 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+		<meta charset="utf-8">
 		<title>My Now Amazing Webpage</title>
 		<!-- Load library stylesheets -->
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick/slick/slick.css"/>
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick/slick/slick-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.6.0/slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.6.0/slick/slick-theme.css"/>
 
 		<!-- Load custom stylesheet -->
 		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
@@ -11,14 +13,22 @@
   <body>
 
 		<div class="main">
-			<div class="slider" id="person-slider">
-				<!-- PLACEHOLDER -->
-				<!-- Values are loaded from csv file using javascript. See javascript.js. -->
+			<div class="the-person-container">
+				<h2>The Person:</h2>
+				<div class="slider" id="person-slider">
+					<!-- PLACEHOLDER -->
+					<!-- Values are loaded from csv file using javascript. See javascript.js. -->
+				</div>
 			</div>
-			<div class="slider" id="challenge-slider">
-				<!-- PLACEHOLDER -->
-				<!-- Values are loaded from csv file using javascript. See javascript.js. -->
+
+			<div class="the-challenge-container">
+				<h2>The Challenge:</h2>
+				<div class="slider" id="challenge-slider">
+					<!-- PLACEHOLDER -->
+					<!-- Values are loaded from csv file using javascript. See javascript.js. -->
+				</div>
 			</div>
+
 			<div id="spinner">
 				<a href="#">Randomize!</a>
 			</div>
@@ -27,8 +37,8 @@
 		<!-- Load library scripts -->
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick/slick/slick.min.js"></script>
-		<script type="text/javascript" src="papaparse.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.6.0/slick/slick.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/papaparse@4.6.2/papaparse.min.js"></script>
 
 		<!-- Load custom script -->
 		<script src="javascript.js"></script>
