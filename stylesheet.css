@@ -1,15 +1,15 @@
 body {
-  background:#F1FAB8;
-  color: #61538f;
+  background: #7c729a;
+  color: white;
 }
 
 a {
-  color: #61538f!important;
+  color: white!important;
 }
 
 .main {
   font-family:Arial;
-  width:500px;
+  max-width:500px;
   display:block;
   margin:0 auto;
 }
@@ -34,6 +34,7 @@ a {
 }
 
 h1 {
+  color: white;
   text-align: center;
 }
 
@@ -52,27 +53,27 @@ h2 {
 }
 
 .person-container {
-  color: #47baa3;
+  color: #524b66;
 }
 
 .person-container h2 {
-  background: #105346;
+  background: white;
 }
 
 .person-container .slick-slider {
-  background: #105346;
+  background: white;
 }
 
 .challenge-container {
-  color: #a497cc;
+  color: #524b66;
 }
 
 .challenge-container h2 {
-  background: #433059;
+  background: white;
 }
 
 .challenge-container .slick-slider {
-  background: #433059;
+  background: white;
 }
 
 .slick-slide {
