@@ -1,28 +1,26 @@
-body{
-  background:#ccc;
+body {
+  background:#F1FAB8;
+  color: #61538f;
 }
+
+a {
+  color: #61538f!important;
+}
+
 .main {
   font-family:Arial;
   width:500px;
   display:block;
   margin:0 auto;
 }
-h3 {
-  background: #fff;
-  color: #3498db;
-  font-size: 36px;
-  line-height: 100px;
-  margin: 10px;
-  padding: 2%;
-  position: relative;
-  text-align: center;
-}
+
 .action{
   display:block;
   margin:100px auto;
   width:100%;
   text-align:center;
 }
+
 .action a {
   display:inline-block;
   padding:5px 10px; 
@@ -30,10 +28,64 @@ h3 {
   color:#fff;
   text-decoration:none;
 }
+
 .action a:hover{
   background:#000;
 }
 
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 1em;
+  position: relative;
+  text-align: left;
+  display: inline;
+  position: absolute;
+  z-index: 999;
+}
+
+.slick-slider {
+  margin: 1em 0;
+}
+
+.person-container {
+  color: #47baa3;
+}
+
+.person-container h2 {
+  background: #105346;
+}
+
+.person-container .slick-slider {
+  background: #105346;
+}
+
+.challenge-container {
+  color: #a497cc;
+}
+
+.challenge-container h2 {
+  background: #433059;
+}
+
+.challenge-container .slick-slider {
+  background: #433059;
+}
+
 .slick-slide {
   height: auto;
+}
+
+.slick-slide h3 {
+  font-size: 1.5em;
+  margin: 1em;
+  position: relative;
+  text-align: left;
+}
+
+.slick-slide p {
+  margin: 1.5em;
 }

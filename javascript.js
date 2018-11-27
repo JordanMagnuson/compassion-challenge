@@ -4,7 +4,7 @@ $(document).ready(function(){
 	createChallengeSlider();
 
 	// Randomizer button.
-	$('#spinner').click(function(e) {
+	$('.spinner').click(function(e) {
 		e.preventDefault();
 		randomizeSlider('#person-slider');
     randomizeSlider('#challenge-slider');
@@ -26,7 +26,7 @@ function createPersonSlider() {
 				console.log(element);
         if (element.Title != null)
         {
-          $('#person-slider').append('<div><h3>' + element.Title + '</h3><p>' + element.Description + '</p></div>');
+          $('#person-slider').append('<div><h3>The Person: ' + element.Title + '</h3><p>' + element.Description + '</p></div>');
         }
 			});
 
@@ -36,7 +36,7 @@ function createPersonSlider() {
 				slidesToScroll: 1,
 				arrows: false,
 				dots: false,
-				focusOnSelect: true,
+				focusOnSelect: false,
 			});
 
       // Randomize to begin.
@@ -59,7 +59,7 @@ function createChallengeSlider() {
 				console.log(element);
         if (element.Title != null)
         {
-          $('#challenge-slider').append('<div><h3>' + element.Title + '</h3><p>' + element.Description + '</p></div>');
+          $('#challenge-slider').append('<div><h3>The Challenge: ' + element.Title + '</h3><p>' + element.Description + '</p></div>');
         }
 			});
 
@@ -69,7 +69,7 @@ function createChallengeSlider() {
 				slidesToScroll: 1,
 				arrows: false,
 				dots: false,
-				focusOnSelect: true,
+				focusOnSelect: false,
 			});
 
       // Randomize to begin.
