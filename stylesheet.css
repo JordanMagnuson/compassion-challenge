@@ -94,6 +94,29 @@ h2 {
 }
 
 #spinner-container {
-  color: #524b66;
   visibility: hidden;
+}
+
+.button {
+  position: relative;
+  background-color: white; /* Green */
+  border: none;
+  color: #524b66!important;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+}
+
+.button:active {
+  background-color: light-grey; /* Green */
+  top: 4px;
+  left: 4px;
+  box-shadow: none;
 }
