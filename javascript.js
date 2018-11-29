@@ -16,7 +16,7 @@ function createPersonSlider() {
   // Use sheetrock library to read Google sheet data.
   // See https://chriszarate.github.io/sheetrock/#documentation
   sheetrock({
-    url: 'https://docs.google.com/spreadsheets/d/1Zg5CANfuGWVEvViLPTarEeVkNulMPmBLNhZgMwpw_Xg/edit#gid=0',
+    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=0',
     callback: function (error, options, response) {
       //console.log(response.rows);
 			response.rows.forEach(function(element) {
