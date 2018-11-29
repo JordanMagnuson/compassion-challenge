@@ -13,20 +13,18 @@ $(document).ready(function(){
 });
 
 function createPersonSlider() {
-	var data;
-	// Use Papa Parse library to read csv file.
-	Papa.parse('person_list.csv', {
-		header: true,
-		download: true,
-		dynamicTyping: true,
-		complete: function(results) {
-			// Insert html.
-			data = results.data;
-			data.forEach(function(element) {
-				console.log(element);
-        if (element.Title != null)
+  // Use sheetrock library to read Google sheet data.
+  // See https://chriszarate.github.io/sheetrock/#documentation
+  sheetrock({
+    url: 'https://docs.google.com/spreadsheets/d/1Zg5CANfuGWVEvViLPTarEeVkNulMPmBLNhZgMwpw_Xg/edit#gid=0',
+    callback: function (error, options, response) {
+      //console.log(response.rows);
+			response.rows.forEach(function(element) {
+				console.log(element.cells.Title);
+        // Skip header row.
+        if (element.cells.Title != 'Title')
         {
-          $('#person-slider').append('<div><h3>The Person: ' + element.Title + '</h3><p>' + element.Description + '</p></div>');
+          $('#person-slider').append('<div><h3>The Person: ' + element.cells.Title + '</h3><p>' + element.cells.Description + '</p></div>');
         }
 			});
 
@@ -39,27 +37,27 @@ function createPersonSlider() {
 				focusOnSelect: false,
 			});
 
+      //$("#person-slider").show();
+
       // Randomize to begin.
       randomizeSlider('#person-slider');
-		}
-	});
+    }
+  });
 }
 
 function createChallengeSlider() {
-  var data;
-	// Use Papa Parse library to read csv file.
-	Papa.parse('challenge_list.csv', {
-    header: true,
-		download: true,
-		dynamicTyping: true,
-		complete: function(results) {
-			// Insert html.
-			data = results.data;
-			data.forEach(function(element) {
-				console.log(element);
-        if (element.Title != null)
+  // Use sheetrock library to read Google sheet data.
+  // See https://chriszarate.github.io/sheetrock/#documentation
+  sheetrock({
+    url: 'https://docs.google.com/spreadsheets/d/1EK_bVgSEZpcmgtDvtheQD9nfAyIObjyuTSCOCl-n_8s/edit#gid=0',
+    callback: function (error, options, response) {
+      //console.log(response.rows);
+			response.rows.forEach(function(element) {
+				console.log(element.cells.Title);
+        // Skip header row.
+        if (element.cells.Title != 'Title')
         {
-          $('#challenge-slider').append('<div><h3>The Challenge: ' + element.Title + '</h3><p>' + element.Description + '</p></div>');
+          $('#challenge-slider').append('<div><h3>The Challenge: ' + element.cells.Title + '</h3><p>' + element.cells.Description + '</p></div>');
         }
 			});
 
@@ -72,10 +70,12 @@ function createChallengeSlider() {
 				focusOnSelect: false,
 			});
 
+      //$("#challenge-container").css('visibility', 'visible');
+
       // Randomize to begin.
       randomizeSlider('#challenge-slider');
-		}
-	});
+    }
+  });
 }
 
 function randomizeSlider(selector) {
