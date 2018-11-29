@@ -16,7 +16,7 @@ function createPersonSlider() {
   // Use sheetrock library to read Google sheet data.
   // See https://chriszarate.github.io/sheetrock/#documentation
   sheetrock({
-    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=0',
+    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=2134499488',
     callback: function (error, options, response) {
       //console.log(response.rows);
 			response.rows.forEach(function(element) {
@@ -50,7 +50,7 @@ function createChallengeSlider() {
   // Use sheetrock library to read Google sheet data.
   // See https://chriszarate.github.io/sheetrock/#documentation
   sheetrock({
-    url: 'https://docs.google.com/spreadsheets/d/1EK_bVgSEZpcmgtDvtheQD9nfAyIObjyuTSCOCl-n_8s/edit#gid=0',
+    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=101186216',
     callback: function (error, options, response) {
       //console.log(response.rows);
 			response.rows.forEach(function(element) {
