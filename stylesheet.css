@@ -52,27 +52,29 @@ h2 {
   margin: 1em 0;
 }
 
-.person-container {
+#person-container {
   color: #524b66;
+  visibility: hidden;
 }
 
-.person-container h2 {
+#person-container h2 {
   background: white;
 }
 
-.person-container .slick-slider {
+#person-container .slick-slider {
   background: white;
 }
 
-.challenge-container {
+#challenge-container {
   color: #524b66;
+  visibility: hidden;
 }
 
-.challenge-container h2 {
+#challenge-container h2 {
   background: white;
 }
 
-.challenge-container .slick-slider {
+#challenge-container .slick-slider {
   background: white;
 }
 
@@ -89,4 +91,9 @@ h2 {
 
 .slick-slide p {
   margin: 1.5em;
+}
+
+#spinner-container {
+  color: #524b66;
+  visibility: hidden;
 }

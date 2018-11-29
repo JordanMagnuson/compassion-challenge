@@ -37,7 +37,8 @@ function createPersonSlider() {
 				focusOnSelect: false,
 			});
 
-      //$("#person-slider").show();
+      // Show the slider once everything has loaded.
+      $("#person-container").css('visibility', 'visible');
 
       // Randomize to begin.
       randomizeSlider('#person-slider');
@@ -70,7 +71,9 @@ function createChallengeSlider() {
 				focusOnSelect: false,
 			});
 
-      //$("#challenge-container").css('visibility', 'visible');
+      // Show the slider once everything has loaded.
+      $("#challenge-container").css('visibility', 'visible');
+      $("#spinner-container").css('visibility', 'visible');
 
       // Randomize to begin.
       randomizeSlider('#challenge-slider');
