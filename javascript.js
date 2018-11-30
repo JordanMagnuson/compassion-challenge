@@ -7,25 +7,26 @@ $(document).ready(function(){
 	$('.spinner').click(function(e) {
 		e.preventDefault();
 		randomizeSlider('#person-slider');
-    randomizeSlider('#challenge-slider');
- });
+    	randomizeSlider('#challenge-slider');
+ 	});
 
 });
 
 function createPersonSlider() {
-  // Use sheetrock library to read Google sheet data.
-  // See https://chriszarate.github.io/sheetrock/#documentation
-  sheetrock({
-    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=2134499488',
-    callback: function (error, options, response) {
-      //console.log(response.rows);
+	// Use sheetrock library to read Google sheet data.
+  	// See https://chriszarate.github.io/sheetrock/#documentation
+  	sheetrock({
+	    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=2134499488',
+	    callback: function (error, options, response) {
+	      	//console.log(response.rows);
 			response.rows.forEach(function(element) {
-				console.log(element.cells.Title);
-        // Skip header row.
-        if (element.cells.Title != 'Title')
-        {
-          $('#person-slider').append('<div><h3>The Person: ' + element.cells.Title + '</h3><p>' + element.cells.Description + '</p></div>');
-        }
+				//console.log(element.cells.Title);
+	        
+		        // Skip header row.
+		        if (element.cells.Title != 'Title')
+		        {
+		         	$('#person-slider').append('<div><h3>The Person: ' + element.cells.Title + '</h3><p>' + element.cells.Description + '</p></div>');
+		        }
 			});
 
 			// Create the actual slider now using the Slick Slider library.
@@ -37,29 +38,29 @@ function createPersonSlider() {
 				focusOnSelect: false,
 			});
 
-      // Show the slider once everything has loaded.
-      $("#person-container").css('visibility', 'visible');
+	      // Show the slider once everything has loaded.
+	      $("#person-container").css('visibility', 'visible');
 
-      // Randomize to begin.
-      randomizeSlider('#person-slider');
-    }
-  });
+	      // Randomize to begin.
+	      randomizeSlider('#person-slider');
+	    }
+  	});
 }
 
 function createChallengeSlider() {
-  // Use sheetrock library to read Google sheet data.
-  // See https://chriszarate.github.io/sheetrock/#documentation
-  sheetrock({
-    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=101186216',
-    callback: function (error, options, response) {
-      //console.log(response.rows);
+	// Use sheetrock library to read Google sheet data.
+	// See https://chriszarate.github.io/sheetrock/#documentation
+	sheetrock({
+	    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=101186216',
+	    callback: function (error, options, response) {
+	      	//console.log(response.rows);
 			response.rows.forEach(function(element) {
-				console.log(element.cells.Title);
-        // Skip header row.
-        if (element.cells.Title != 'Title')
-        {
-          $('#challenge-slider').append('<div><h3>The Challenge: ' + element.cells.Title + '</h3><p>' + element.cells.Description + '</p></div>');
-        }
+				//console.log(element.cells.Title);
+		        // Skip header row.
+		        if (element.cells.Title != 'Title')
+		        {
+		          $('#challenge-slider').append('<div><h3>The Challenge: ' + element.cells.Title + '</h3><p>' + element.cells.Description + '</p></div>');
+		        }
 			});
 
 			// Create the actual slider now using the Slick Slider library.
@@ -71,14 +72,14 @@ function createChallengeSlider() {
 				focusOnSelect: false,
 			});
 
-      // Show the slider once everything has loaded.
-      $("#challenge-container").css('visibility', 'visible');
-      $("#spinner-container").css('visibility', 'visible');
+			// Show the slider once everything has loaded.
+			$("#challenge-container").css('visibility', 'visible');
+			$("#spinner-container").css('visibility', 'visible');
 
-      // Randomize to begin.
-      randomizeSlider('#challenge-slider');
-    }
-  });
+			// Randomize to begin.
+			randomizeSlider('#challenge-slider');
+	    }
+  	});
 }
 
 function randomizeSlider(selector) {
