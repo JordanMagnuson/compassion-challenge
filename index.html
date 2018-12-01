@@ -23,7 +23,7 @@
 				Choose a difficulty level [not yet working]: <a class="spinner" href="">Hard</a> <a class="spinner" href="">Harder</a> <a class="spinner" href="">Hardest</a>
 			</div>
 
-			<div id="person-container">
+			<div class="slick-container" id="person-container">
 				<h2>The Person:</h2>
 				<div class="slider" id="person-slider">
 					<!-- PLACEHOLDER -->
@@ -31,7 +31,15 @@
 				</div>
 			</div>
 
-			<div id="challenge-container">
+			<div class="slick-container" id="meditation-container">
+				<h2>The Meditation:</h2>
+				<div class="slider" id="meditation-slider">
+					<!-- PLACEHOLDER -->
+					<!-- Values are loaded from csv file using javascript. See javascript.js. -->
+				</div>
+			</div>			
+
+			<div class="slick-container" id="challenge-container">
 				<h2>The Challenge:</h2>
 				<div class="slider" id="challenge-slider">
 					<!-- PLACEHOLDER -->
@@ -39,9 +47,15 @@
 				</div>
 			</div>
 
-			<div id="spinner-container">
-				<p>Don't like this challenge? <a class="spinner button" href="#">Try another!</a></p>
-			</div>
+			<div class="footer">
+				<div id="spinner-container">
+					<p>Don't like this challenge? <a class="spinner button" href="#">Try another!</a></p>
+				</div>
+
+				<div id="share-container">
+					<p>Take a photo or video of what you make and share it <a href="#">here</a>!</p>
+				</div>		
+			</div>	
 		</div>
 
 		<!-- Load library scripts -->

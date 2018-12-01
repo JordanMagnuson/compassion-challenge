@@ -48,34 +48,21 @@ h2 {
   z-index: 999;
 }
 
+.slick-container {
+  color: #524b66;
+  visibility: hidden;
+}
+
+.slick-container h2 {
+  background: white;
+}
+
+.slick-container .slick-slider {
+  background: white;
+}
+
 .slick-slider {
   margin: 1em 0;
-}
-
-#person-container {
-  color: #524b66;
-  visibility: hidden;
-}
-
-#person-container h2 {
-  background: white;
-}
-
-#person-container .slick-slider {
-  background: white;
-}
-
-#challenge-container {
-  color: #524b66;
-  visibility: hidden;
-}
-
-#challenge-container h2 {
-  background: white;
-}
-
-#challenge-container .slick-slider {
-  background: white;
 }
 
 .slick-slide {
@@ -91,10 +78,6 @@ h2 {
 
 .slick-slide p {
   margin: 1.5em;
-}
-
-#spinner-container {
-  visibility: hidden;
 }
 
 .button {
@@ -119,4 +102,8 @@ h2 {
   top: 4px;
   left: 4px;
   box-shadow: none;
+}
+
+.footer {
+  visibility: hidden;
 }
