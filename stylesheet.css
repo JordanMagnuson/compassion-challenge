@@ -39,8 +39,9 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 1em;
+  margin-bottom: 0.5em;
   position: relative;
   text-align: left;
   display: inline;
@@ -70,14 +71,16 @@ h2 {
 }
 
 .slick-slide h3 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 1em;
+  margin-bottom: 0.5em;  
   position: relative;
   text-align: left;
 }
 
 .slick-slide p {
-  margin: 1.5em;
+  margin: 1em;
+  margin-top: 0;
 }
 
 .button {
