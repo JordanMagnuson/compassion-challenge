@@ -96,13 +96,14 @@ function createChallengeSlider() {
 	    callback: function (error, options, response) {
 	      	//console.log(response.rows);
 	      	var startingSentence = response.rows[1].cells.starting_sentence;
+	      	var endSentence = response.rows[1].cells.end_sentence;
 
 			response.rows.forEach(function(element) {
 				//console.log(element.cells.title);
 		        // Skip header row.
 		        if (element.cells.title != 'title')
 		        {
-		          $('#challenge-slider').append('<div><h3>The Response: ' + element.cells.title + '</h3><p>' + startingSentence + '<br><br>Now: ' + element.cells.description + '</p></div>');
+		          $('#challenge-slider').append('<div><h3>The Response: ' + element.cells.title + '</h3><p>' + startingSentence + '<br><br>Now: ' + element.cells.description + '<br><br><em>' + endSentence + '</em></p></div>');
 		        }
 			});
 
