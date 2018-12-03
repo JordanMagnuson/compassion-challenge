@@ -1,14 +1,14 @@
 $(document).ready(function(){
 	// Create the sliders.
-	createPersonSlider();
 	createMeditationSlider();
+	createPersonSlider();
 	createChallengeSlider();
 
 	// Randomizer button.
 	$('.spinner').click(function(e) {
 		e.preventDefault();
-		randomizeSlider('#person-slider');
 		randomizeSlider('#meditation-slider');
+		randomizeSlider('#person-slider');
     	randomizeSlider('#challenge-slider');
  	});
 
@@ -20,14 +20,16 @@ function createPersonSlider() {
   	sheetrock({
 	    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=2134499488',
 	    callback: function (error, options, response) {
-	      	//console.log(response.rows);
+	      	// console.log(response.rows);
+	      	var endSentence = response.rows[1].cells.end_sentence;
+
 			response.rows.forEach(function(element) {
-				//console.log(element.cells.Title);
+				//console.log(element.cells.title);
 	        
 		        // Skip header row.
-		        if (element.cells.Title != 'Title')
+		        if (element.cells.title != 'title')
 		        {
-		         	$('#person-slider').append('<div><h3>The Person: ' + element.cells.Title + '</h3><p>' + element.cells.Description + ' You can think of this person specifically, or imagine a fictional character based on this person.</p></div>');
+		         	$('#person-slider').append('<div><h3>The Person: ' + element.cells.title + '</h3><p>' + element.cells.description + ' ' +  endSentence + '</p></div>');
 		        }
 			});
 
@@ -56,13 +58,15 @@ function createMeditationSlider() {
 	    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=1277014298',
 	    callback: function (error, options, response) {
 	      	//console.log(response.rows);
+	      	var endSentence = response.rows[1].cells.end_sentence;
+
 			response.rows.forEach(function(element) {
-				//console.log(element.cells.Title);
+				//console.log(element.cells.title);
 	        
 		        // Skip header row.
-		        if (element.cells.Title != 'Title')
+		        if (element.cells.title != 'title')
 		        {
-		         	$('#meditation-slider').append('<div><h3>The meditation: ' + element.cells.Title + '</h3><p>' + element.cells.Description + ' Fall back on a fictional representation of the person, as necessary.</p></div>');
+		         	$('#meditation-slider').append('<div><h3>The Meditation: ' + element.cells.title + '</h3><p>' + element.cells.description + ' ' + endSentence + '</p></div>');
 		        }
 			});
 
@@ -91,12 +95,14 @@ function createChallengeSlider() {
 	    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=101186216',
 	    callback: function (error, options, response) {
 	      	//console.log(response.rows);
+	      	var startingSentence = response.rows[1].cells.starting_sentence;
+
 			response.rows.forEach(function(element) {
-				//console.log(element.cells.Title);
+				//console.log(element.cells.title);
 		        // Skip header row.
-		        if (element.cells.Title != 'Title')
+		        if (element.cells.title != 'title')
 		        {
-		          $('#challenge-slider').append('<div><h3>The Challenge: ' + element.cells.Title + '</h3><p>' + element.cells.Description + '</p></div>');
+		          $('#challenge-slider').append('<div><h3>The Response: ' + element.cells.title + '</h3><p>' + startingSentence + '<br><br>Now: ' + element.cells.description + '</p></div>');
 		        }
 			});
 
