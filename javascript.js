@@ -20,7 +20,11 @@ function createPersonSlider() {
   	sheetrock({
 	    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=2134499488',
 	    callback: function (error, options, response) {
-	      	// console.log(response.rows);
+	      	// console.log('****');  	    	
+	      	// console.log(error);
+	      	// console.log('****');
+	      	// console.log(response);
+	      	// console.log('****');      	
 	      	var endSentence = response.rows[1].cells.end_sentence;
 
 			response.rows.forEach(function(element) {
