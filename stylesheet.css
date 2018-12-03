@@ -38,6 +38,10 @@ h1 {
   text-align: center;
 }
 
+h1 a {
+  text-decoration: none!important;
+}
+
 h2 {
   font-size: 1.2em;
   margin: 1em;
@@ -79,7 +83,7 @@ h2 {
 }
 
 .slick-slide p {
-  margin: 1em;
+  margin: 1.2em;
   margin-top: 0;
 }
 
