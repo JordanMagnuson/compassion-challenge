@@ -16,47 +16,6 @@ $(document).ready(function(){
 
 });
 
-function createPersonSlider() {
-	// Use sheetrock library to read Google sheet data.
-  	// See https://chriszarate.github.io/sheetrock/#documentation
-  	sheetrock({
-	    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=2134499488',
-	    callback: function (error, options, response) {
-	      	// console.log('****');  	    	
-	      	// console.log(error);
-	      	// console.log('****');
-	      	// console.log(response);
-	      	// console.log('****');      	
-	      	var endSentence = response.rows[1].cells.end_sentence;
-
-			response.rows.forEach(function(element) {
-				//console.log(element.cells.title);
-	        
-		        // Skip header row.
-		        if (element.cells.title != 'title' && element.cells.title != '' && element.cells.exclude == '')
-		        {
-		         	$('#person-slider').append('<div><h3>The Person: ' + element.cells.title + '</h3><p>' + element.cells.description + ' ' +  endSentence + '</p></div>');
-		        }
-			});
-
-			// Create the actual slider now using the Slick Slider library.
-			$('#person-slider').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: false,
-				dots: false,
-				focusOnSelect: false,
-			});
-
-	      // Show the slider once everything has loaded.
-	      $("#person-container").css('visibility', 'visible');
-
-	      // Randomize to begin.
-	      randomizeSlider('#person-slider');
-	    }
-  	});
-}
-
 function createMeditationSlider() {
 	// Use sheetrock library to read Google sheet data.
   	// See https://chriszarate.github.io/sheetrock/#documentation
@@ -66,7 +25,10 @@ function createMeditationSlider() {
 	      	//console.log(response.rows);
 	      	var endSentence = response.rows[1].cells.end_sentence;
 
-			response.rows.forEach(function(element) {
+	      	// Shuffle the results, so swiping slides is randomized.
+	      	var rows = response.rows;
+	      	rows = shuffle(rows);
+			rows.forEach(function(element) {
 				//console.log(element.cells.title);
 	        
 		        // Skip header row.
@@ -94,6 +56,50 @@ function createMeditationSlider() {
   	});
 }
 
+function createPersonSlider() {
+	// Use sheetrock library to read Google sheet data.
+  	// See https://chriszarate.github.io/sheetrock/#documentation
+  	sheetrock({
+	    url: 'https://docs.google.com/spreadsheets/d/1UqB5lLEIRCANtXF358dVEWJ60e7vsYoaQJIlvgazUmU/edit#gid=2134499488',
+	    callback: function (error, options, response) {
+	      	// console.log('****');  	    	
+	      	// console.log(error);
+	      	// console.log('****');
+	      	// console.log(response);
+	      	// console.log('****');      	
+	      	var endSentence = response.rows[1].cells.end_sentence;
+
+	      	// Shuffle the results, so swiping slides is randomized.
+	      	var rows = response.rows;
+	      	rows = shuffle(rows);
+			rows.forEach(function(element) {
+				//console.log(element.cells.title);
+	        
+		        // Skip header row.
+		        if (element.cells.title != 'title' && element.cells.title != '' && element.cells.exclude == '')
+		        {
+		         	$('#person-slider').append('<div><h3>The Person: ' + element.cells.title + '</h3><p>' + element.cells.description + ' ' +  endSentence + '</p></div>');
+		        }
+			});
+
+			// Create the actual slider now using the Slick Slider library.
+			$('#person-slider').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: false,
+				dots: false,
+				focusOnSelect: false,
+			});
+
+	      // Show the slider once everything has loaded.
+	      $("#person-container").css('visibility', 'visible');
+
+	      // Randomize to begin.
+	      randomizeSlider('#person-slider');
+	    }
+  	});
+}
+
 function createChallengeSlider() {
 	// Use sheetrock library to read Google sheet data.
 	// See https://chriszarate.github.io/sheetrock/#documentation
@@ -104,8 +110,11 @@ function createChallengeSlider() {
 	      	var startingSentence = response.rows[1].cells.starting_sentence;
 	      	var endSentence = response.rows[1].cells.end_sentence;
 
-			response.rows.forEach(function(element) {
-				console.log(element.cells.exclude);
+	      	// Shuffle the results, so swiping slides is randomized.
+	      	var rows = response.rows;
+	      	rows = shuffle(rows);
+			rows.forEach(function(element) {
+				// console.log(element.cells.exclude);
 		        // Skip header row.
 		        if (element.cells.title != 'title' && element.cells.title != '' && element.cells.exclude == '')
 		        {
@@ -141,7 +150,10 @@ function createCallToActionSlider() {
 	      	var startingSentence = response.rows[1].cells.starting_sentence;
 	      	// var endSentence = response.rows[1].cells.end_sentence;
 
-			response.rows.forEach(function(element) {
+	      	// Shuffle the results, so swiping slides is randomized.
+	      	var rows = response.rows;
+	      	rows = shuffle(rows);
+			rows.forEach(function(element) {
 				//console.log(element.cells.title);
 		        // Skip header row.
 		        if (element.cells.title != 'title' && element.cells.title != '' && element.cells.exclude == '')
@@ -183,4 +195,23 @@ function randomizeSlider(selector) {
 
 	// Now go to the new slides.
 	$(selector).slick('slickGoTo', randomSlide);
+}
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
