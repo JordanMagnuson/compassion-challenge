@@ -87,6 +87,10 @@ h2 {
   margin-top: 0;
 }
 
+.slick-slide a {
+  color: #524b66!important;
+}
+
 .button {
   position: relative;
   background-color: white; /* Green */
