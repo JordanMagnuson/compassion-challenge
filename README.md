@@ -1,4 +1,4 @@
-# compassion-challenge
+# Compassion Challenge
 
 Compassion Challenge is a little game designed to help you work out your compassion muscles through little imaginative meditations and exercises.
 
