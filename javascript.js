@@ -118,7 +118,7 @@ function createChallengeSlider() {
 		        // Skip header row.
 		        if (element.cells.title != 'title' && element.cells.title != '' && element.cells.exclude == '')
 		        {
-		          $('#challenge-slider').append('<div><h3>The Artifact: ' + element.cells.title + '</h3><p>' + startingSentence + '<br><br>Now: ' + element.cells.description + '<br><br><em>' + endSentence + '</em></p></div>');
+		          $('#challenge-slider').append('<div><h3>The Expression: ' + element.cells.title + '</h3><p>' + startingSentence + '<br><br>Now: ' + element.cells.description + '<br><br><em>' + endSentence + '</em></p></div>');
 		        }
 			});
 
