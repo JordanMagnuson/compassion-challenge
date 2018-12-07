@@ -118,3 +118,7 @@ h2 {
 .footer {
   visibility: hidden;
 }
+
+.small {
+  font-size: 0.9em; 
+}
